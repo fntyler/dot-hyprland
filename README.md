@@ -1,6 +1,10 @@
 # dot-hyprland
 dot files for my hyprland configuration
 
+## to-do
+
+- [ ] add bashrc (merge from private repo)
+
 ## swaylock-effects
 
 > Repository                    : aur
@@ -14,3 +18,8 @@ dot files for my hyprland configuration
 ```
 $ yay -S swaylock-effects
 ```
+## git-aware-prompt
+
+[github - git-aware-prompt](https://github.com/jimeh/git-aware-prompt)
+
+
