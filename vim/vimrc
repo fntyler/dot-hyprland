@@ -1,0 +1,53 @@
+"-- pathogen
+execute pathogen#infect()
+syntax on
+filetype plugin indent on
+
+set showcmd
+set updatetime=100
+set nocompatible
+set number
+set relativenumber
+set linebreak
+set nohlsearch
+set incsearch
+set scrolloff=8
+set hidden
+
+set tabstop=4
+set shiftwidth=4
+set expandtab
+
+"-- UTF-8 Support
+set encoding=utf-8
+
+"-- indenting cues https://michurin.github.io/xterm256-color-picker/
+let g:indent_guides_enable_on_vim_startup = 2
+let g:indent_guides_auto_colors = 0
+hi IndentGuidesEven ctermbg=235
+hi IndentGuidesOdd ctermbg=238
+let g:indent_guides_guide_size = 1
+
+"-- highlight special character open and close [] () {}
+hi MatchParen cterm=none ctermbg=98 ctermfg=none
+
+"-- tab-complete behavior like Bash
+set wildmode=longest:full,full
+set wildmenu
+
+"-- Code Folding
+set foldmethod=indent
+set foldlevel=99
+"-- map folding to <space>
+nnoremap <space> za
+
+"-- YAML 
+au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml foldmethod=indent
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+let g:indentLine_char = '⦙'
+
+
+"-- Auto-complete (YouCompleteMe plugin)
+let g:ycm_autoclose_preview_window_after_completion=1
+	map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
