@@ -51,3 +51,20 @@ let g:indentLine_char = '⦙'
 let g:ycm_autoclose_preview_window_after_completion=1
 	map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
+" -- GitGutter
+" -sign list
+highlight SignColumn ctermbg=7 
+highlight GitGutterAdd ctermfg=10
+highlight GitGutterChange ctermfg=11
+highlight GitGutterDelete ctermfg=9
+highlight! link SignColumn LineNr
+let g:gitgutter_sign_removed = 'x'
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
